@@ -4,7 +4,7 @@ require('dotenv').config()
 // CORS module de sécurité --> active le cross-origin-resource-sharing
 const cors = require("cors");
 
-const PORT = process.env.PORT || 8080;;
+const PORT = process.env.PORT || 8080;
 // initialisation cors
 var corsOptions = {
   origin: "http://localhost:8081"
