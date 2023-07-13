@@ -23,8 +23,8 @@ const { uploadImage } = require('./controller/upload.controller.js')
 const { upload } = require('./service/upload.service.js')
 
 var db = require('./models');
-// const destination = require('./models/destination');
-// const activity = require('./models/activity');
+const destination = require('./models/destination');
+const activity = require('./models/activity');
 const bodyParser = require('body-parser');
 var User = db.User;
 var Post = db.Post;

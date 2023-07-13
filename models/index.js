@@ -29,6 +29,7 @@ const sequelize = new Sequelize( config.DB_URL, {
   dialectModule: pg,
 },
 );
+
 fs
   .readdirSync(__dirname)
   .filter(file => {
