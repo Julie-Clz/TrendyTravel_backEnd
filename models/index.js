@@ -8,8 +8,8 @@ const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'production';
-const config = require(__dirname + '/../config/config.json')[env];
-// const config = require("../config/config.js");
+// const config = require(__dirname + '/../config/config.json')[env];
+const config = require("../config/config.js");
 
 const db = {};
 
@@ -21,19 +21,19 @@ const db = {};
 //   sequelize = new Sequelize(config.database, config.username, config.password, config);
 // }
 
-const sequelize = new Sequelize( config.url, {
-  dialect: 'postgres',
-  dialectModule: pg,
-},
-);
-
-
-//PRODUCTION
-// const sequelize = new Sequelize( config.DB_URL, {
+// const sequelize = new Sequelize( config.url, {
 //   dialect: 'postgres',
 //   dialectModule: pg,
 // },
 // );
+
+
+//PRODUCTION
+const sequelize = new Sequelize( config.DB_URL, {
+  dialect: 'postgres',
+  dialectModule: pg,
+},
+);
 
 fs
   .readdirSync(__dirname)
