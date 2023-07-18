@@ -143,7 +143,7 @@ app.post('/followers', function(req, res) {
   });
 });
 
-app.delete('/followers/followerId', function(req, res) {
+app.delete('/followers/:followerId', function(req, res) {
   const id = req.params.followerId;
   Follower.destroy({
     where: { id: id }
