@@ -132,10 +132,10 @@ app.delete('/users/:userId', function(req, res) {
 // FOLLOWERS
 app.post('/followers', function(req, res) {
   Follower.create({
-    follower: req.body.follower,
-    followed: req.body.followed
-  }).then(user => { 
-    res.send(user);
+    follower: req.body.followerId,
+    followed: req.body.followedId
+  }).then(follower => { 
+    res.send(follower);
   })
   .catch((err) => {
     console.log(">> Error while creating user: ", err);
