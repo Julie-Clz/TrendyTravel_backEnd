@@ -131,7 +131,7 @@ app.delete('/users/:userId', function(req, res) {
 
 // FOLLOWERS
 app.post('/followers', function(req, res) {
-  User.create({
+  Follower.create({
     follower: req.body.follower,
     followed: req.body.followed
   }).then(user => { 
@@ -145,7 +145,7 @@ app.post('/followers', function(req, res) {
 
 app.delete('/followers/followerId', function(req, res) {
   const id = req.params.followerId;
-  User.destroy({
+  Follower.destroy({
     where: { id: id }
   }).then(() => {
     res.status(200).send({ message: 'deleted successfully a follower with id = ' + id });
