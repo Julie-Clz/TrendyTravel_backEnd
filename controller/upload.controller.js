@@ -13,8 +13,6 @@ const uploadImage = async (req, res, next) => {
     const imageDetails = await uploadToCloudinary(base64, fileFormat)
 
     res.json({
-      // status: 'success',
-      // message: 'Upload successful',
       data: imageDetails.url,
     })
   } catch (error) {

@@ -14,26 +14,21 @@ const config = require("../config/config.js");
 const db = {};
 
 //DEVELOPMENT
-// let sequelize;
-// if (config.use_env_variable) {
-//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
-// } else {
-//   sequelize = new Sequelize(config.database, config.username, config.password, config);
-// }
+const sequelize = new Sequelize( 
+  config.DB, 
+  config.USER, 
+  config.PASSWORD, {
+    dialect: 'postgres',
+    dialectModule: pg
+  }
+  );
 
-// const sequelize = new Sequelize( config.url, {
+//PRODUCTION
+// const sequelize = new Sequelize( config.DB_URL, {
 //   dialect: 'postgres',
 //   dialectModule: pg,
 // },
 // );
-
-
-//PRODUCTION
-const sequelize = new Sequelize( config.DB_URL, {
-  dialect: 'postgres',
-  dialectModule: pg,
-},
-);
 
 fs
   .readdirSync(__dirname)
