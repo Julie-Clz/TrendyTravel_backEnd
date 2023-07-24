@@ -14,21 +14,21 @@ const config = require("../config/config.js");
 const db = {};
 
 //DEVELOPMENT
-const sequelize = new Sequelize( 
-  config.DB, 
-  config.USER, 
-  config.PASSWORD, {
-    dialect: 'postgres',
-    dialectModule: pg
-  }
-  );
+// const sequelize = new Sequelize( 
+//   config.DB, 
+//   config.USER, 
+//   config.PASSWORD, {
+//     dialect: 'postgres',
+//     dialectModule: pg
+//   }
+//   );
 
 //PRODUCTION
-// const sequelize = new Sequelize( config.DB_URL, {
-//   dialect: 'postgres',
-//   dialectModule: pg,
-// },
-// );
+const sequelize = new Sequelize( config.DB_URL, {
+  dialect: 'postgres',
+  dialectModule: pg,
+},
+);
 
 fs
   .readdirSync(__dirname)
